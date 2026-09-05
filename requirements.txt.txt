@@ -1,0 +1,5 @@
+kivy==2.1.0
+kivymd==1.1.1
+requests==2.28.2
+curl_cffi==0.5.10
+plyer==2.1

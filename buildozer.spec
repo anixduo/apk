@@ -1,0 +1,39 @@
+[app]
+title = Frost Mart Trial Checker
+package.name = frostmartchecker
+package.domain = com.frostmart
+
+source.dir = .
+source.include_exts = py,png,jpg,kv,atlas
+
+version = 1.0.0
+
+requirements = python3,kivy==2.1.0,kivymd==1.1.1,requests,curl_cffi,plyer
+
+orientation = portrait
+
+fullscreen = 0
+
+android.permissions = INTERNET, WRITE_EXTERNAL_STORAGE, READ_EXTERNAL_STORAGE
+
+android.api = 30
+android.minapi = 21
+
+android.gradle_dependencies = 
+android.add_src =
+
+android.manifest.extra = 
+android.allow_backup = True
+
+android.wakelock = True
+android.ignore_libs =
+
+# Change this to your app icon
+android.icon = assets/icons/app_icon.png
+
+# If you want to add sound files
+android.add_src = assets/sounds/*.wav
+
+[buildozer]
+log_level = 2
+warn_on_root = 1
