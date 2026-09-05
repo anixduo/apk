@@ -24,4 +24,3 @@ android.app_theme = @android:style/Theme.Material.Light.NoActionBar
 [buildozer]
 log_level = 2
 warn_on_root = 1
-p4a.branch = master
