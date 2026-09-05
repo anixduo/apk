@@ -1,0 +1,19 @@
+name: Build Frost Mart APK
+
+on:
+  push:
+    branches: [ main ]
+  workflow_dispatch:
+
+jobs:
+  build:
+    runs-on: ubuntu-22.04
+
+    steps:
+    - name: Checkout code
+      uses: actions/checkout@v4
+
+    - name: Build APK with Buildozer
+      uses: kivy/buildozer-action@v1
+      with:
+        command: buildozer android debug
