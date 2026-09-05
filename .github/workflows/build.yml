@@ -36,6 +36,10 @@ jobs:
           autoconf libtool pkg-config autoconf-archive libunwind-dev
         pip install buildozer cython
 
+    - name: Accept Android SDK licenses
+      run: |
+        yes | ~/.buildozer/android/platform/android-sdk/tools/bin/sdkmanager --licenses || true
+
     - name: Build APK
       run: |
         echo "android.ndk = 26c" >> buildozer.spec
@@ -47,3 +51,10 @@ jobs:
       with:
         name: FrostMart-APK
         path: bin/*.apk
+
+    - name: Upload build log (if failed)
+      if: failure()
+      uses: actions/upload-artifact@v4
+      with:
+        name: build-log
+        path: .buildozer/logs/build.log
